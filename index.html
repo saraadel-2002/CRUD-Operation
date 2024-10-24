@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Operation</title>
+    <!-- ^----------- css links ------------->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- ^----------- css links ------------->
+
+  </head>
+  <body>
+   <div class="contanier">
+    <section class="w-75 mx-auto p-2 rounded my-2 bg-info-subtle">
+      <h1 class="text-center">CRUD OPERATION</h1>
+
+      <div class="form-floating my-1">
+        <input oninput="validationName()" type="text" class="form-control" id="productName" placeholder="">
+        <label for="productName">Product Name: </label>
+        <p id="msgName" class="alert alert-danger d-none">Invalid Pattern</p>
+      </div>
+
+      <div class="form-floating my-1">
+        <input oninput="validationPrice()" type="number" class="form-control" id="productPrice" placeholder="">
+        <label for="productPrice">Product Price: </label>
+        <p id="msgPrice" class="alert alert-danger d-none">Invalid Pattern</p>
+      </div>
+
+      <div class="form-floating my-1">
+        <input oninput="validationCategory()" list="category" type="text" class="form-control" id="productCategory" placeholder="">
+        <label for="productCategory">Product Category: </label>
+        <datalist id="category">
+          <option value="Tv"></option>
+          <option value="Mobile"></option>
+          <option value="Screens"></option>
+          <option value="Electronics"></option>
+        </datalist>
+        <p id="msgCategory" class="alert alert-danger d-none">Invalid Pattern</p>
+      </div>
+
+      <div class="form-floating my-1">
+        <textarea oninput="validationDescription()" class="form-control" style="height: 100px;" id="productDescription" placeholder=""></textarea>
+        <label for="productDescription">Product Description: </label>
+        <p id="msgDecription" class="alert alert-danger d-none">Invalid Pattern</p>
+      </div>
+
+      <div class="form-floating my-1">
+        <input onchange="validationImage()" type="file" class="form-control" id="productImage" placeholder="">
+        <label for="productImage">Product Image: </label>
+        <p id="msgImage" class="alert alert-danger d-none">Invalid Pattern</p>
+      </div>
+
+      <button onclick="addProduct()" class="btn btn-primary" id="btnAdd">Add Product</button>
+      <button onclick="updateData()" class="btn btn-warning d-none" id="btnUpdate">Update Product</button>
+    </section>
+
+
+    <input oninput="displayData()" type="search" class="form-control w-50 mx-auto my-2 mt-3" id="searchInput" placeholder="Search By Name....">
+
+
+    <section class="mt-3">
+      <table class="table table-info table-striped table text-center m-auto">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+      </table>
+    </section>
+   </div>
+    
+
+    <!--? ******** script links ***********-->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <!--? ******** script links ***********-->
+
+  </body>
+</html>
